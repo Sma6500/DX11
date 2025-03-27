@@ -1,7 +1,7 @@
 # DX11
 
 ## Overview
-This repository contains an adaptation of the **DX11 algorithm** for **weekly time series**, based on Keerthi's detrending approach from the study:
+This repository contains an adaptation of the **DX11 algorithm** for **weekly time series**, based on detrending approach from the study:
 
 > **Contrasted Contribution of Intraseasonal Time Scales to Surface Chlorophyll Variations in a Bloom and an Oligotrophic Regime**  
 > [Read the paper here](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JC015701)
