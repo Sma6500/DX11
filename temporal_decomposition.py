@@ -197,9 +197,9 @@ if __name__=="__main__":
 
     import matplotlib
     matplotlib.rcParams['axes.prop_cycle']=plt.cycler('color', tc.colorsets['bright'])
-    
+    path="yourdata_path"
     print('')
-    chl=np.load("/home/luther/Documents/npy_data/chl/chl_avw_glob_100km_8d_1997_2023.npy")
+    chl=np.load(path)
     chl_decomposed=temporal_decomposition(np.squeeze(chl))
     
     year=np.linspace(1997, 2023, 1212)
@@ -221,81 +221,7 @@ if __name__=="__main__":
     plt.plot(year,chl_decomposed.I[16:,50,50], label='SubSesonnal', color=tc.colorsets['bright'][3], alpha=0.5)
     plt.title("Decomposed time serie of a random chlorophyll-a avw pixel")
     plt.legend()
-    plt.savefig("/home/luther/Documents/presentations/CSI_1/ts_decompose_ex.png")
     plt.show()
-    # plt.plot(chl_decomposed.time_serie[500:592,30,45])
-    
-    # plt.plot(chl_decomposed.T[500:592,30,45])
-    # plt.plot(chl_decomposed.S[500:592,30,45])
-    # plt.plot(chl_decomposed.I[500:592,30,45])
-    
-    # plt.legend(['chl','T','S','I'])
-    
-    # plt.show()
-    
-    # plt.plot(chl_decomposed.time_serie[:,35,55]-chl_decomposed.T[:,35,55]-chl_decomposed.S[:,35,55]-chl_decomposed.I[:,35,55])
-    # plt.show()
-    # ts=np.array([np.mean(test_time_serie[i:i+8,150,45]) for i in range(0,9853,8)])
-
-    # ts_dec=temporal_decomposition(ts)
-
-    # plt.plot(ts_dec.time_serie)
-
-    # plt.plot(ts_dec.T)
-    # plt.plot(ts_dec.S)
-    # plt.plot(ts_dec.I,alpha=0.5)
-
-    # plt.legend(['chl','T','S','I'])
-# chl_dataset=np.load("/datatmp/home/lollier/npy_emergence/chl.npy")[:,0]
-# bath=np.load("/datatmp/home/lollier/npy_emergence/dyn.npy")[:,-1]
-# np.putmask(chl_dataset, bath<1000, np.nan)
-
-# plt.figure(figsize=(20,10))
-# year=np.linspace(1998,2019,1012)
-
-# plt.plot(year,np.nanmedian(chl_dataset,axis=(1,2)))
-# #plt.plot(year,np.nanmean(chl_dataset,axis=(1,2)))
-
-# plt.title("Mean CHL for Bath>1000")
-# #plt.legend(['Median','Mean'])
-# plt.xlabel('year')
-# plt.grid()
-# plt.legend(['chl'])#,'T','S','I'])
-# plt.show()
-
-
-# plt.plot(year,np.sum(np.isnan(chl_dataset),axis=(1,2))/36000)
-# plt.plot(year,np.nanmean(chl_dataset,axis=(1,2)))
-# plt.legend(["% valeur manquante CHL","Moyenne CHL globale"])
-# plt.title("%nan CHL vs moyenne CHL")
-# plt.xlabel('year')
-# plt.grid()
-# plt.show()
-
-
-# % OC satellites operating periods
-# % Sat Start End
-# % SeaWiFS 04/09/1997 11/12/2010
-# % MERIS 28/04/2002 04/05/2012
-# % MODIS 03/07/2002 -
-# % VIIRSN 02/01/2012 -
-# % OLA 25/04/2016 -
-# % VIIRSJ1 29/11/2017 -
-# % OLB 14/05/2018 -
-
-#    #from cmocean import cm
-# premiere_periode=np.sum(np.isnan(chl_dataset[184:644]),axis=0)/460
-# deuxieme_periode=np.sum(np.isnan(chl_dataset[736:]),axis=0)/276
-# imshow_area((deuxieme_periode-premiere_periode)/premiere_periode, cmap='viridis_r',title='evolution % données manquantes chl entre 2002-2012 et 2014-2019')
-
-# imshow_area(premiere_periode, cmap='viridis_r',title='% données manquantes chl entre 2002-2012')
-# imshow_area(deuxieme_periode, cmap='viridis_r',title='% données manquantes chl entre 2014-2019')
-
-# imshow_area((premiere_periode-deuxieme_periode), vmin=-0.2,vmax=0.2,cmap='seismic',title='evolution % données manquantes chl entre 2002-2012 et 2014-2019')
-
-
-
-
 
 
 
